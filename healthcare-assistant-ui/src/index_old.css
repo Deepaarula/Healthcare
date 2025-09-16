@@ -1,0 +1,201 @@
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f6fbff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+}
+
+.app-background {
+  min-height: 100vh;
+  background-image: url("https://aviditymedicaldesignblog.com/wp-content/uploads/2023/11/healthcare-innovations.jpg");
+  background-size: contain;   /* 🔑 no zoom-in, full image */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #111;     /* dark fill for the rest */
+  position: relative;
+}
+
+.app-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+
+
+
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #00eaff; /* neon teal */
+  text-shadow: 0px 0px 8px rgba(0, 234, 255, 0.8);
+}
+
+.powered {
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Landing Page */
+.highlight {
+  color: #00eaff;
+  font-weight: bold;
+}
+
+/* Cards */
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* ✅ center vertically */
+  min-height: 100vh;        /* full height */
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.6); /* ✅ mild transparent white */
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);           /* ✅ glass effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #ffffff, #dbeafe); /* elegant white-blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+}
+
+
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #004080;
+  margin-bottom: 0.25rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+button {
+  background: #2563eb;        /* blue */
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;       /* smaller */
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: auto;                /* ✅ shrink to fit content */
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+button:hover {
+  background: #1e40af;        /* darker on hover */
+}
+
+
+/* Assistant View */
+.landing button {
+  background: #00eaff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #003;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.landing button:hover {
+  background: #0575e6;
+  color: white;
+}
+
+
+.chat-panel {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 80%;            /* ✅ take up more horizontal space */
+  max-width: 900px;      /* ✅ don’t stretch too wide */
+  min-height: 300px;     /* ✅ ensures it’s not too small vertically */
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;  /* ✅ child elements fill width */
+
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+
+.chat-panel textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.results {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+

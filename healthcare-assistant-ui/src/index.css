@@ -1,0 +1,175 @@
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f6fbff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+}
+
+.app-background {
+  min-height: 100vh;
+  background-image: url("https://aviditymedicaldesignblog.com/wp-content/uploads/2023/11/healthcare-innovations.jpg");
+  background-size: cover;   /* ✅ full background fill */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111;
+  position: relative;
+}
+
+.app-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #00eaff;
+  text-shadow: 0px 0px 8px rgba(0, 234, 255, 0.8);
+}
+
+.powered {
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Landing Page */
+.highlight {
+  color: #00eaff;
+  font-weight: bold;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.5); /* ✅ more transparent */
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #ffffff, #dbeafe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+}
+
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #004080;
+  margin-bottom: 0.25rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Buttons */
+button {
+  background: #2563eb;
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  margin: 0.25rem;
+  display: inline-block;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* Chat Panel */
+.chat-panel {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 80%;
+  max-width: 900px;
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  position: absolute;
+  top: 50%;              /* ✅ center */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.chat-panel textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.results {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+

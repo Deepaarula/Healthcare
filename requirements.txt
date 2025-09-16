@@ -1,0 +1,12 @@
+
+flask-cors
+flask
+gunicorn
+requests
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
+google-cloud-storage
+google-cloud-bigquery
+pytest
+pytest-cov
